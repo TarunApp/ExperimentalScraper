@@ -6,7 +6,7 @@ import urllib.request
 from bs4 import BeautifulSoup
 
 #------------SCRAPING------------------#
-url = ""
+url = "https://jasonduongism.weebly.com/project-introduction--purpose-paper.html"
 
 request = requests.get(url)		#<---------- Move this into a seperate function
 html_content = request.text
@@ -51,6 +51,15 @@ def helloworld():
 	links = (soup.find_all("a"))                    #Test Function
 	for link in links:
     		print(link.get("href"))
+
+def btnpresslinks(url):
+    url = websiteurl
+    request = requests.get(url)
+    html_content = request.text
+    soup = BeautifulSoup(html_content, "html.parser")
+    links = (soup.find_all("a"))
+    for link in links:
+        print(link.get("href"))
 
 btn['command']= btnpress
 btn2['command']= helloworld

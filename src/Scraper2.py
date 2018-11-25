@@ -42,5 +42,8 @@ x = Entry(root) #<----- Split the formatting and the initialized variable, other
 x.grid(row = 0, column = 2)          #<-- Can use Pack, but .grid allows for more flexibility
 Button(root, text="Enter", command=scrape).grid(row=1)  #<---- The third paramater, command, doesnt need any parentheses
 
+Label(root) #Set Label to include the scraped text
+
+
 root.mainloop()
 
