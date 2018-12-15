@@ -31,7 +31,7 @@ def scrape():
 
     #Find the tag and its attribute
     y = soup.findAll("div", class_ = "paragraph")
-    return y
+    textarea1.insert(END, y)
 
 def scrapelinks():
     url = x.get()                #<--------- Function to get links
@@ -67,6 +67,13 @@ Label(root, text="Hello World").grid(row=0, column=0)
 x = Entry(root) #<----- Split the formatting and the initialized variable, otherwise the code doesnt work
 x.grid(row = 0, column = 2)          #<-- Can use Pack, but .grid allows for more flexibility
 Button(root, text="Enter", command=scrape).grid(row=1)  #<---- The third paramater, command, doesnt need any parentheses
+
+
+textarea1 = Text(root)
+textarea1.grid(row=0, column=1)
+
+
+
 
 
 

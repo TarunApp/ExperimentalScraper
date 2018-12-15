@@ -5,8 +5,9 @@ import urllib
 import urllib.request
 from bs4 import BeautifulSoup
 
+
 #------------SCRAPING------------------#
-url = "https://jasonduongism.weebly.com/project-introduction--purpose-paper.html"
+url = ""
 
 request = requests.get(url)		#<---------- Move this into a seperate function
 html_content = request.text
@@ -71,4 +72,3 @@ urlwidget.pack(side="top")
 
 
 root.mainloop()
-
