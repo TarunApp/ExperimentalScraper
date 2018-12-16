@@ -63,14 +63,22 @@ def scrapetext():
 #---------------------------GUI----------------------------#
 root = tk.Tk()
 
-Label(root, text="Hello World").grid(row=0, column=0)
+Label(root, text="Enter Website URL:").grid(row=0, sticky=N)
 x = Entry(root) #<----- Split the formatting and the initialized variable, otherwise the code doesnt work
-x.grid(row = 0, column = 2)          #<-- Can use Pack, but .grid allows for more flexibility
-Button(root, text="Enter", command=scrape).grid(row=1)  #<---- The third paramater, command, doesnt need any parentheses
+x.grid(row = 1, sticky=W)          #<-- Can use Pack, but .grid allows for more flexibility, same functions
+Button(root, text="Enter", command=scrape,).grid(row=3, sticky=N)  #<---- The third paramater, command, doesnt need any parentheses
 
 
-textarea1 = Text(root)
-textarea1.grid(row=0, column=1)
+
+
+
+#Label(root, text="Scraped Data").grid()
+
+
+
+#---------------------------Textoutput----------------------#
+textarea1 = Text(root, width=25, height=10)
+textarea1.grid(row=2, column=6, sticky=E)
 
 
 
