@@ -4,6 +4,7 @@ import requests
 import urllib
 import urllib.request
 from bs4 import BeautifulSoup
+import time
 
 #------------SCRAPING------------------#
 #url = ""
@@ -31,6 +32,10 @@ def scrape():
 
     #Find the tag and its attribute
     y = soup.findAll("div", class_ = "paragraph")
+   #Additional 
+    textarea1.insert(END, "Loading...")
+    time.sleep(1.2)
+    
     textarea1.insert(END, y)
 
 def scrapelinks():

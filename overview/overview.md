@@ -6,5 +6,6 @@
 - Pack and Grid
 	- GUI widgets have to be packed onto the websites before they can be used in any other functions or blocks of code
 	- Grid and pack have multiple paramaters that llow for formatting
+	
 
 # Build Quality
