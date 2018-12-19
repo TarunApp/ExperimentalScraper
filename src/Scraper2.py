@@ -86,6 +86,9 @@ x = Entry(root, width=25) #<----- Split the formatting and the initialized varia
 x.grid(padx=20, pady=1)          #<-- Can use Pack, but .grid allows for more flexibility, same functions
 Button(root, text="Find Paragraph", command=scrape,).grid(padx=1, pady=0)  #<---- The third paramater, command, doesnt need any parentheses
 
+Button(root, text="Find Links", command=scrapelinks).grid(padx=1, pady=0)
+Button(root, text="Scrape Text", command=scrapetext).grid(padx=1, pady=0)
+
 #Button(root, text="Find WebsiteLinks", command=scrapelinks).grid()
 
 
