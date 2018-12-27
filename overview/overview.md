@@ -7,5 +7,8 @@
 	- GUI widgets have to be packed onto the websites before they can be used in any other functions or blocks of code
 	- Grid and pack have multiple paramaters that llow for formatting
 	
+# Integration
+- Identification Function
+	- Classifies names from list using a specific set of chars extracted from a part of the url given
 
 # Build Quality
