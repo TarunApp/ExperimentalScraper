@@ -21,7 +21,7 @@ str(y)
 names = []
 def scrape():
     links = (soup.find_all("a"))
-    y = []
+    y = [] #Note: For for loops, when using a list, initialize the list before starting the loop.
     for link in links:
     	y.append(link.get('href'))
 
