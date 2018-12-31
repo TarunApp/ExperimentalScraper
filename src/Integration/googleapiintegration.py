@@ -19,12 +19,14 @@ y = soup.findAll("div", class_="paragraph")
 str(y)
 
 names = []
-#def scrape():
-    #links = (soup.find_all("a"))
-    #for link in links: #Find a href tag in the a tag
-    	#y = []
-    	#y.append(link.get('href'))
-    #return 	
+def scrape():
+    links = (soup.find_all("a"))
+    y = []
+    for link in links:
+    	y.append(link.get('href'))
+
+    print(y)	
+	
     		
     	
     
