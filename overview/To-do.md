@@ -13,3 +13,5 @@
 		- []Website content scraping function
 
 	- []Format the Google Sheets file to show an organized chart of collected data
+	- []Fix sorting of names
+	- []Fix organization of code
