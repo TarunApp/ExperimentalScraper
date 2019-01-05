@@ -4,8 +4,8 @@ import requests
 import urllib
 import urllib.request
 from bs4 import BeautifulSoup
-import time
-
+import string, random, time
+import re
 #------------SCRAPING------------------#
 #url = ""
 
@@ -56,8 +56,7 @@ def scrapelinks():
     else:
     	textarea2.insert(END, "Please enter a valid URl")
 
-def scrapetext():
-	
+def scrapetext():	
     url = x.get()  
     if url:             #<--------- Function to get text
     	request = requests.get(url)
@@ -69,9 +68,35 @@ def scrapetext():
     	y = soup.findAll("a", text="Exampel") #Find certain text, but with certain tags
     	textarea3.insert(END, y)
     else:
-    	textarea3.insert(END, "Please enter a valid URL")
+    	textarea3.insert(END, "Please enter a valid URL") #Replace with seperate window
+
+def namecollect(websiteurl):
+    b = websiteurl.split(".") #Returns name, although combined
+    #print(b[0])
+    e = (b[0])
+    str(e)
+    #print(e)
+    h = e.split("/")
+    r = h[2]
+    return r
 
 
+def findtext():
+    para = soup.body.findAll(text=re.compile('The purpose'))
+    para2 = soup.body.findAll(text=re.compile('Click on the tabs'))
+    paracombine = para + para2
+    list(para)
+    print(para)
+    if "The purpose" in para or paracombine:
+        print("True1")
+        return True
+        if "Click on" in para or para2:
+            print("True2")
+            return True
+        else:
+            print("False")
+    else:
+        print("False else")
 
 
 
@@ -98,6 +123,10 @@ Button(root, text="Scrape Text", command=scrapetext).grid(padx=1, pady=0)
 
 
 #---------------------------Textoutput----------------------#
+
+
+Label(root, text="User:").grid(padx=10, pady=1)
+
 
 Label(root, text=("Scraped Text")).grid(row=1, column=7)
 textarea1 = Text(root, width=40, height=25)
