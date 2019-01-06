@@ -33,16 +33,23 @@ def scrape():
 
     	#Find the tag and its attribute
     	y = soup.findAll("div", class_ = "paragraph")
-   	#Additional 
+   	#Name 
     	textarea1.insert(END, "Loading...")
-    	time.sleep(1.2)
-    
+    	time.sleep(1.2)  
     	textarea1.insert(END, y)
+        #Add Textarea for URLGrabber
+        #b = url.split(".")
+        #e = (b[0])
+        #str(e)
+        #h = e.split("/")
+        #r = h[2]
+        #return r
     else:
     	textarea1.insert(END, "Please enter a valid URL")
 
 def scrapelinks():
     url = x.get()
+    
     if url:                #<--------- Function to get links
     	request = requests.get(url)
     	html_content = request.text
@@ -53,6 +60,13 @@ def scrapelinks():
     	for link in links:
         	y = link.get("href")
     	textarea2.insert(END, y)
+        #Add TextArea For URLgrabber
+        
+        #b = url.split(".")
+        #e = (b[0])
+        #str(e)
+        #h = e.split("/")
+        #r = h[2]
     else:
     	textarea2.insert(END, "Please enter a valid URl")
 
@@ -109,6 +123,11 @@ root.title("QuickScrape")
 Label(root, text="Enter Website URL:").grid(padx=10, pady=1)
 x = Entry(root, width=25) #<----- Split the formatting and the initialized variable, otherwise the code doesnt work
 x.grid(padx=20, pady=1)          #<-- Can use Pack, but .grid allows for more flexibility, same functions
+
+urlname = Entry(root, width=25) #<----- Split the formatting and the initialized variable, otherwise the code doesnt work
+urlname.grid(padx=20, pady=1)
+
+
 Button(root, text="Find Paragraph", command=scrape,).grid(padx=1, pady=0)  #<---- The third paramater, command, doesnt need any parentheses
 
 Button(root, text="Find Links", command=scrapelinks).grid(padx=1, pady=0)
@@ -143,6 +162,10 @@ textarea3.grid(row=2, column=9, sticky=E)
 
 
 Label(root, text="Additional").grid(row=1, column=10)
+textarea4 = Text(root, width=40, height=25)
+textarea4.grid(row=2, column=10, sticky=E)
+
+Label(root, text="Website Content").grid(row=1, column=10)
 textarea4 = Text(root, width=40, height=25)
 textarea4.grid(row=2, column=10, sticky=E)
 
