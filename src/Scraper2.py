@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 import string, random, time
 import re
 #------------SCRAPING------------------#
-#url = ""
+url = ""
 
 #request = requests.get(url)		#<---------- Move this into a seperate function
 #html_content = request.text
@@ -24,7 +24,7 @@ import re
     #print(link.get("href"))
 #------------------------Functions---------------------------#
 def scrape():
-    url = x.get()	#Implement wheter url contains a link or not
+    url = x.get()	
     if url:                #<--------- Use Get function to get text from text boxes
     	request = requests.get(url)		#Moved into seperate Function
     	html_content = request.text
@@ -35,15 +35,9 @@ def scrape():
     	y = soup.findAll("div", class_ = "paragraph")
    	#Name 
     	textarea1.insert(END, "Loading...")
-    	time.sleep(1.2)  
+    	time.sleep(1.2) 
     	textarea1.insert(END, y)
-        #Add Textarea for URLGrabber
-        #b = url.split(".")
-        #e = (b[0])
-        #str(e)
-        #h = e.split("/")
-        #r = h[2]
-        #return r
+        namecollect(url)
     else:
     	textarea1.insert(END, "Please enter a valid URL")
 
@@ -60,13 +54,8 @@ def scrapelinks():
     	for link in links:
         	y = link.get("href")
     	textarea2.insert(END, y)
+        namecollect(url)
         #Add TextArea For URLgrabber
-        
-        #b = url.split(".")
-        #e = (b[0])
-        #str(e)
-        #h = e.split("/")
-        #r = h[2]
     else:
     	textarea2.insert(END, "Please enter a valid URl")
 
@@ -77,7 +66,7 @@ def scrapetext():
     	html_content = request.text
                                                                         #Assign functions to buttons
     	soup = BeautifulSoup(html_content, "html.parser")
-
+        namecollect(url)
     #Find the tag and its attribute
     	y = soup.findAll("a", text="Exampel") #Find certain text, but with certain tags
     	textarea3.insert(END, y)
@@ -92,10 +81,10 @@ def namecollect(websiteurl):
     #print(e)
     h = e.split("/")
     r = h[2]
-    return r
+    urlname.insert(END, r)
 
 
-def findtext():
+def checktext():
     para = soup.body.findAll(text=re.compile('The purpose'))
     para2 = soup.body.findAll(text=re.compile('Click on the tabs'))
     paracombine = para + para2
@@ -127,7 +116,7 @@ x.grid(padx=20, pady=1)          #<-- Can use Pack, but .grid allows for more fl
 urlname = Entry(root, width=25) #<----- Split the formatting and the initialized variable, otherwise the code doesnt work
 urlname.grid(padx=20, pady=1)
 
-
+#COMMAND = SCRAPE
 Button(root, text="Find Paragraph", command=scrape,).grid(padx=1, pady=0)  #<---- The third paramater, command, doesnt need any parentheses
 
 Button(root, text="Find Links", command=scrapelinks).grid(padx=1, pady=0)
