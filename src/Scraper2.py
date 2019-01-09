@@ -26,38 +26,37 @@ url = ""
 def scrape():
     url = x.get()	
     if url:                #<--------- Use Get function to get text from text boxes
-    	request = requests.get(url)		#Moved into seperate Function
-    	html_content = request.text
+        request = requests.get(url)		#Moved into seperate Function
+        html_content = request.text
 
-    	soup = BeautifulSoup(html_content, "html.parser")
+        soup = BeautifulSoup(html_content, "html.parser")
 
-    	#Find the tag and its attribute
-    	y = soup.findAll("div", class_ = "paragraph")
-   	#Name 
-    	textarea1.insert(END, "Loading...")
-    	time.sleep(1.2) 
-    	textarea1.insert(END, y)
+        #Find the tag and its attribute
+        y = soup.findAll("div", class_ = "paragraph")
+           	#Name 
+        textarea1.insert(END, "Loading...")
+        time.sleep(1.2) 
+        textarea1.insert(END, y)
         namecollect(url)
     else:
-    	textarea1.insert(END, "Please enter a valid URL")
+        textarea1.insert(END, "Please enter a valid URL")
 
 def scrapelinks():
-    url = x.get()
-    
+    url = x.get()   
     if url:                #<--------- Function to get links
-    	request = requests.get(url)
-    	html_content = request.text
+        request = requests.get(url)
+        html_content = request.text
 
-    	soup = BeautifulSoup(html_content, "html.parser")              #Assign functions to buttons
-	
-    	links = (soup.find_all("a"))
-    	for link in links:
-        	y = link.get("href")
-    	textarea2.insert(END, y)
+        soup = BeautifulSoup(html_content, "html.parser")             
+        #Assign functions to buttons	
+        links = (soup.find_all("a"))
+        for link in links:
+        y = link.get("href")
+        textarea2.insert(END, y)
         namecollect(url)
-        #Add TextArea For URLgrabber
+            #Add TextArea For URLgrabber
     else:
-    	textarea2.insert(END, "Please enter a valid URl")
+        textarea2.insert(END, "Please enter a valid URl")
 
 def scrapetext():	
     url = x.get()  
