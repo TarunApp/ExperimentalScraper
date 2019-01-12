@@ -1,3 +1,7 @@
+import requests
+import urllib
+import urllib.request
+from bs4 import BeautifulSoup
 import numpy as np
 import matplotlib.pyplot as plt
 import time, random
@@ -35,11 +39,19 @@ def checktext():
 
 
 #Add points to x, y 
-x = []
-y = []
+#x = []
+#y = []
 
 
 #fig, plot1 = plt.subplots()
-plot1 = pl
-plt.scatter(x, y, 100, 'b')
-plt.show()
+#plot1 = pl
+#plt.scatter(x, y, 100, 'b')
+#plt.show()
+
+
+#labels = 
+#sizes = 
+
+#fig1, ax1 = plt.subplots()
+#ax1.pie(sizes, labels=labels).
+#plt.show()
