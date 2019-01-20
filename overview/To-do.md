@@ -4,7 +4,9 @@
 - []Add additional features
 	-[]Add collection and display of website contents
 - []Organize functions and main files
-- Implement a serv to gather data from websites and display on graph using NumPy and Matplotlib
+- [X]Implement a serv to gather data from websites and display on graph using NumPy and Matplotlib
+	- []Test Data Distribution Displays: Pie Chart, Bar Graph, Scatter
+	- []Integrate functions with graphing data
 
 
 # To-do Integration
