@@ -1,6 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import time, random
+import requests
+from BeautifulSoup import bs4
 
 
 
@@ -33,10 +35,6 @@ def checktext():
         return False
 
 
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Fixing random state for reproducibility
 np.random.seed(19680801)
 
 

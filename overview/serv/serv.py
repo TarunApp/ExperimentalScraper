@@ -37,7 +37,7 @@ def checktext():
         return False
 
 
-
+#PIE CHART
 #Add points to x, y 
 #x = []
 #y = []
@@ -54,4 +54,29 @@ def checktext():
 
 #fig1, ax1 = plt.subplots()
 #ax1.pie(sizes, labels=labels).
+#plt.show()
+
+
+
+
+# BAR GRAPH
+#tuple
+#fig, ax = plt.subplots()
+
+
+#Calculate Data
+#dataset = ()
+#yaxis = np.arange(len(people)) #Y Axis 
+#Max 
+#xaxis = 1 * 100 * np.random.rand(len(people))
+
+
+#yaxis
+#Format Data Display
+#ax.barh(yaxis  , xaxis, align='center', color='green')
+#ax.set_yticks(yaxis)
+#ax.set_yticklabels(dataset)
+#ax.set_xlabel()
+#ax.set_title()
+
 #plt.show()
