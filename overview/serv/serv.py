@@ -12,7 +12,7 @@ import time, random
 
 							#Function to distribute data points throughout graph
 
-url = "https://jasonduongism.weebly.com/"
+url = ""
 request = requests.get(url)  # <---------- Move this into a seperate function
 html_content = request.text
 soup = BeautifulSoup(html_content, "html.parser")
